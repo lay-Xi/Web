@@ -1,0 +1,74 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=Asap:600|Libre+Baskerville:400i,700|Source+Sans+Pro');
+
+/* Class Container */
+.menu {
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.hypertext {
+  max-width: 50%;
+  margin: 5%;
+  text-align: center;
+}
+
+/* ID Container */
+#menu {
+  list-style: none;
+	display: inline-block;
+	padding-right: 30px;
+}
+
+/* Tag selector */
+body {
+  background: url('../img/futuristic.png') center center fixed no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
+}
+
+h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  font-style: italic;
+  color: white;
+}
+
+p {
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 15px;
+  line-height: normal;
+}
+
+a {
+  font-family: 'Asap', sans-serif;
+}
+
+/* Links */
+a.link:link {
+    color: skyblue;
+}
+
+a.link:visited {
+    color: grey;
+}
+
+a.link:hover {
+    color: white;
+}
+
+a.link:active {
+    color: darkblue;
+}

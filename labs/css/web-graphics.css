@@ -1,0 +1,39 @@
+body {
+  background: url("../img/night-sky.png") center center fixed no-repeat;
+  background-size: cover;
+}
+
+.container {
+	margin: auto;
+	max-width: 500px;
+}
+
+figure {
+	width: 100%;
+}
+
+figure img {
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	padding: 10px;
+}
+
+figcaption {
+  color: white;
+  text-align: right;
+  font-style: oblique;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+header {
+  background: url(../img/dream.png) no-repeat;
+	width: 451px;
+	height: 206px;
+}
+
+header h1 {
+	position: absolute;
+	top: -999em;
+	left: -999em;
+}

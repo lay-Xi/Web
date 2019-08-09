@@ -1,0 +1,655 @@
+/*  --------------------------------------------------
+    Start
+    Imported fonts and CSS reset
+    --------------------------------------------------
+*/
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script|EB+Garamond:400,400i,600,600i');
+
+/* CSS Reset */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*  --------------------------------------------------
+    Global Fonts
+    Set global fonts for all text
+    --------------------------------------------------
+*/
+
+/* Heading font type */
+h1, h2, h3 {
+  font-family: 'Clicker Script', cursive;
+	text-shadow: 2px 2px 2px black;
+}
+
+/* Paragraph text font type */
+p {
+  font-family: 'EB Garamond', serif;
+	font-size: 100%;
+	text-shadow: 1px 1px 3px snow;
+}
+
+.main p {
+	font-size: 100%;
+}
+
+/* Link font type */
+a {
+  font-family: 'EB Garamond', serif;
+}
+
+/* Banner title font */
+h1 {
+  font-size: 500%;
+}
+
+/* Banner subtitle font */
+h2 {
+  font-size: 225%;
+}
+
+/* Banner link font style */
+.summary a {
+  text-transform: uppercase;
+}
+
+/* Subheading font */
+h3 {
+  font-size: 200%;
+}
+
+/* Indent abbreviations */
+abbr {
+  font-style: italic;
+}
+
+/* Link title font style */
+.design-name {
+  font-weight: 600;
+}
+
+/* Link author font style */
+.designer-name {
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Archive and Resources font style */
+.design-archives ul, .zen-resources ul {
+  text-transform: uppercase;
+}
+
+footer a {
+	font-weight: 600;
+	font-size: 200%;
+}
+
+/*  --------------------------------------------------
+    Global Styling
+		Additional global designs
+    --------------------------------------------------
+*/
+
+a:link {
+	color: silver;
+	text-decoration: none;
+}
+
+a:visited {
+	color: dimgrey;
+	text-decoration: none;
+}
+
+a:hover {
+	color: seashell;
+	text-decoration: none;
+}
+
+a:active {
+	color: snow;
+}
+
+p::selection, abbr::selection, a::selection, h1::selection,
+h2::selection, h3::selection, li::selection, span::selection,
+footer::selection {
+	background-color: snow;
+	text-shadow: 1px 1px 2px black;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/*  --------------------------------------------------
+    Grid/Flexbox setup
+		Layout for content
+    --------------------------------------------------
+*/
+
+/* Background */
+body {
+  background: url(../img/zen-garden-background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  max-width: 1900px;
+}
+
+/* Initial grid layout */
+.page-wrapper {
+  display: grid;
+	grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "intro intro intro"
+    "sidebar . content"
+    "sidebar . content"
+    "sidebar . content"
+    "sidebar . content"
+    "sidebar . content";
+	padding: 20px 20px 0px 20px;
+}
+
+/*  --------------------------------------------------
+    Visal Assist
+    REMOVE AFTER DONE
+    --------------------------------------------------
+*/
+
+.page-wrapper > div {
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+/* -------------------------------------------------- */
+
+/* Intro layout */
+.intro {
+	grid-area: intro;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"title summary"
+		"preamble preamble ";
+}
+
+/*  --------------------------------------------------
+    Visal Assist
+    REMOVE AFTER DONE
+    --------------------------------------------------
+*/
+
+.intro > div {
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+.intro > [role="banner"] {
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+/* -------------------------------------------------- */
+
+/* Title layout */
+[role="banner"] {
+	grid-area: title;
+}
+
+/* Summary layout */
+.summary {
+	grid-area: summary;
+}
+
+/* Preamble layout */
+.preamble {
+	grid-area: preamble;
+}
+
+/* Sidebar layout */
+.wrapper {
+	grid-area: sidebar;
+	position: fixed;
+	display: grid;
+	grid-template-columns: 320px;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"selection"
+		"archive"
+		"resources";
+}
+
+.design-selection {
+	grid-area: selection;
+}
+
+/* Main content layout */
+.main {
+	grid-area: content;
+	margin: 0 0 0 330px;
+}
+
+/*  --------------------------------------------------
+    Title Design
+		Design looks for title portion
+    --------------------------------------------------
+*/
+
+[role="banner"] {
+	color: white;
+}
+
+[role="banner"] h1 {
+	text-align: center;
+	text-shadow: 2px 2px 10px white;
+}
+
+[role="banner"] h2 {
+	text-align: center;
+	text-shadow: 1px 1px 1px whitesmoke;
+}
+
+.summary {
+	color: white;
+	text-align: center;
+}
+
+.intro > div#zen-summary {
+  background-color: rgba(255, 255, 255, 0.4);
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	height: 150px;
+	width: 100%;
+	border-radius: 150px;
+}
+
+.intro > div#zen-summary p {
+	padding: 0 15px 0 15px;
+}
+
+.preamble {
+	color: white;
+	text-align: center;
+	padding: 10px 20px 20px 20px;
+}
+
+/*  --------------------------------------------------
+    Sidebar Design
+		Sidebar placement within layout
+    --------------------------------------------------
+*/
+
+.sidebar > div {
+  background-color: rgba(255, 255, 255, 0.2);
+	display: block;
+	height: 470px;
+	border-radius: 30px;
+}
+
+.wrapper {
+	color: white;
+}
+
+.wrapper li {
+	font-style: italic;
+}
+
+.design-selection {
+	display: flex;
+	flex-flow: column;
+}
+
+.design-selection h3 {
+	text-align: center;
+}
+
+.design-selection > [role="navigation"] ul {
+	padding: 0 10px 0 10px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.design-archives h3 {
+  text-align: center;
+  font-size: 150%;
+}
+
+.design-archives > [role="navigation"] ul li {
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+.design-archives > [role="navigation"] ul li a {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.zen-resources {
+	margin-top: 40px;
+}
+
+.zen-resources h3 {
+	text-align: center;
+	font-size: 250%;
+}
+
+.zen-resources ul {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.zen-resources ul li a {
+  font-weight: 600;
+}
+
+/*  --------------------------------------------------
+    Main Design
+		Main content placement within layout
+    --------------------------------------------------
+*/
+
+.main {
+	color: white;
+	padding: 10px 5px 0 5px;
+}
+
+.main > div {
+	padding-bottom: 10px;
+}
+
+.explanation {
+  text-align: center;
+	width: 65%;
+  padding-right: 40px;
+}
+
+.participation {
+	text-align: center;
+	padding-left: 400px;
+}
+
+.benefits {
+  text-align: center;
+	width: 65%;
+  padding-right: 40px;
+}
+
+.requirements {
+	text-align: center;
+	padding-left: 400px;
+}
+
+footer {
+	text-align: center;
+	margin-top: 10px;
+}
+
+footer a {
+	padding: 0 20px 0 20px;
+}
+
+/*  --------------------------------------------------
+    Animations
+		Transitions and animations for website
+    --------------------------------------------------
+*/
+
+a {
+  transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+[role="banner"] {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.preamble {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.sidebar, .explanation {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.participation {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.benefits {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.requirements {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+footer, .summary {
+  -webkit-opacity: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 6s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/*  --------------------------------------------------
+    Responsive
+		Edit view from different resolutions
+    --------------------------------------------------
+*/
+
+/* Width between 769px and 1439px */
+@media screen and (max-width: 1439px) and (min-width: 971px) {
+  .intro {
+    width: 100%;
+  }
+
+  .participation {
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 0;
+  }
+
+  .requirements {
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 0;
+  }
+}
+
+/* Width between 426px and 970px */
+@media screen and (max-width: 970px) and (min-width: 426px) {
+  .intro {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  [role="banner"] {
+    width: 90%;
+  }
+
+  .summary {
+    margin-top: 150px;
+  }
+
+  .explanation {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .participation {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .benefits {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .requirements {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Width between 376px and 425px */
+@media screen and (max-width: 425px) {
+  .intro {
+    width: 105%;
+    padding-right: 10px;
+    grid-template-columns: 2fr 2fr;
+  }
+
+  .summary {
+    margin-top: 65px;
+  }
+
+  .wrapper {
+    width: 145%;
+    top: 550px;
+    position: absolute;
+  }
+
+  .main {
+    margin: 0;
+    padding-top: 500px;
+  }
+
+  .explanation {
+    width: 90%;
+    padding-right: 0;
+  }
+
+  .participation {
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .benefits {
+    width: 90%;
+    padding-right: 0;
+  }
+
+  .requirements {
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer {
+    width: 550px;
+    text-align: left;
+    font-size: 55%;
+  }
+}

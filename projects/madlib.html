@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head charset="utf-8">
+  <title>Mad-Lib</title>
+  <link href="css/madlib.css" rel="stylesheet">
+  <script src="js/madlib.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="centerme">
+      <h1>Mad-Lib</h1>
+    </header>
+
+    <section class="centerme" class="putaboxaroundme">
+      <ul>
+        <li>Plural Noun: <input type="text" id="plural2"></li>
+        <li>Plural Noun: <input type="text" id="plural1"></li>
+        <li>Adjective: <input type="text" id="adjective1"></li>
+        <li>Plural Noun: <input type="text" id="plural3"></li>
+        <li>Verb: <input type="text" id="verb1"></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="centerme">
+        <input type="button" value="Generate Mad-Lib" id="generate">
+      </div>
+    </section>
+
+    <section>
+      <div id="story" class="centerme"></div>
+    </section>
+  </div>
+</body>
+</html>
